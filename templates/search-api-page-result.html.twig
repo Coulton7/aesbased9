@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation for displaying a single search result coming from Search API page.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="search-result">
+  <div class="dotted-border">
+    {{ title_prefix }}
+    <h3{{ title_attributes }}>
+    <a href="{{ url }}">{{ title }}</a>
+    </h3>
+    <h6>{{ info_split.type }}</h6>
+    {{ title_suffix }}
+    <div class="search-snippet-info">
+      {% if snippet %}
+        <p class="search-snippet"{{ content_attributes }}>{{ snippet }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

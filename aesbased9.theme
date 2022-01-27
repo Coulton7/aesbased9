@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+ function aesbased9_preprocess_page(&$vars) {
+     // template files called page--contenttype.tpl.php
+     //if (isset($vars['node']->type)) {
+      //   $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+    // }
+ }
+
+ function aesbased9_preprocess_search_api_page_result(&$vars){
+   $nid = $id;
+   $node = node_load($nid);
+   $nodeType = $node->type;
+   switch($nodeType):
+    case 'article':
+      $vars['contentType'] = 'News';
+    break;
+    case 'case_studies':
+      $vars['contentType'] = 'Case Studies';
+    break;
+    case 'industryguide':
+      $vars['contentType'] = 'Industry Guide';
+    break;
+    case 'product':
+      $vars['contentType'] = 'Product';
+    break;
+    case 'gland_packing':
+      $vars['contentType'] = 'Product';
+    break;
+    case 'bearing_protection':
+      $vars['contentType'] = 'Product';
+    break;
+    case 'productbrochure':
+      $vars['contentType'] = 'Product Brochure';
+    break;
+    case 'video':
+      $vars['contentType'] = 'Video';
+    break;
+    case 'whitepaper':
+      $vars['contentType'] = 'Whitepaper';
+    break;
+    case 'apiplans':
+      $vars['contentType'] = 'API Plans';
+    break;
+    case 'page':
+      $vars['contentType'] = 'Web Page';
+    break;
+    default:
+      $vars['contentType'] = '';
+    break;
+  endswitch;
+ }
+
+ function aesbased9_theme(){
+ 	$items=array();
+
+ 	$items['user_login']=array(
+ 	'render element' => 'form',
+ 	'path'=> drupal_get_path('theme', 'aesbased9').'/templates',
+ 	'template'=>'user_login',
+ 	'preprocess functions'=>array(
+ 	'aesbased9_preprocess_user_login'
+ 	),
+ 	);
+ 	return $items;
+ }

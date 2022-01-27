@@ -1,0 +1,30 @@
+type: theme
+base theme: bootstrap
+core: 9.x
+core_version_requirement: ^8 || ^9
+version: 1.0
+
+name: 'aesbased9'
+description: 'A Drupal Bootstrap 3 based sub-theme.'
+package: 'Bootstrap'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  vex_banner: 'Vex Banner'
+  preface: 'Preface'
+  wavelower: 'wavelower'
+  header: 'Top Bar'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  suffix: 'Suffix'
+  postscript_fir: 'Postscript First'
+  postscript_mid: 'Postscript Middle'
+  postscript_last: 'Postscript Last'
+  footer: 'Footer'
+  footer_lower: 'Footer Lower'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
