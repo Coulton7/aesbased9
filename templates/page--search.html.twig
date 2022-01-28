@@ -56,7 +56,7 @@
 <div class="container-fluid bannercontainer">
 	<div class="row bannerimage">
 		<div class="row waveupper row-eq-height">
-			<div class="col-sm-2 col-xs-1 fullscreen">
+			<div class="col-md-2 col-sm-1 col-1 fullscreen">
         <a title="{{ 'Home'|t }}" class="logo-link" href="{{ front_page }}">
           <div class="logo">
             {{ page.logo }}
@@ -79,7 +79,7 @@
         		theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
       			]
     			%}
-					<div class="col-sm-10 col-xs-11 fullscreen">
+					<div class="col-md-10 col-sm-11 col-11 fullscreen">
 		    		<header id="navbar" role="banner"{{ navbar_attributes.addClass(navbar_classes) }}>
 		      		{% if not navbar_attributes.hasClass(container) %}
 		        		<div class="{{ container }}">
@@ -111,8 +111,8 @@
 		    {% if page.navigation_collapsible %}
 					{% block navigation_collapsible %}
 						<div class="text-center action-menu">
-							<div class="col-sm-2 col-xs-0"></div>
-							<div class="col-sm-10 col-xs-12">
+							<div class="col-md-2 col-sm-0 col-0"></div>
+							<div class="col-md-10 col-sm-12 col-12">
 		          	{{ page.navigation_collapsible }}
 		        	</div>
 						</div>
@@ -140,12 +140,12 @@
 	{% if page.wavelower %}
 		{% block wavelower %}
 		<div class="row wavelower row-eq-height">
-			<div class="col-md-9 col-sm-8 col-xs-0 fullscreen">
+			<div class="col-lg-9 col-md-8 col-sm-0 col-0 fullscreen">
 				<div class="bottom-gap">
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-4 col-xs-12 fullscreen">
+			<div class="col-lg-3 col-md-4 col-sm-12 col-12 fullscreen">
 				{{ page.wavelower }}
 			</div>
 		</div>
@@ -158,7 +158,7 @@
 {# Header #}
 {% if page.header %}
 	{% block header %}
-		<div class="col-sm-12 fullscreen" role="heading">
+		<div class="col-md-12 fullscreen" role="heading">
 			{{ page.header }}
 		</div>
 	{% endblock %}
@@ -173,10 +173,10 @@
 			{% set structure_attribute = create_attribute() %}
       {%
         set structure_classes =[
-          page.sidebar_first and page.sidebar_second ? 'col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2',
-          page.sidebar_first and page.sidebar_second is empty ? 'col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2',
-          page.sidebar_second and page.sidebar_first is empty ? 'col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2',
-          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12 fullscreen'
+          page.sidebar_first and page.sidebar_second ? 'col-md-10 offset-md-1 col-xl-8 offset-xl-2',
+          page.sidebar_first and page.sidebar_second is empty ? 'col-md-10 offset-md-1 col-xl-8 offset-xl-2',
+          page.sidebar_second and page.sidebar_first is empty ? 'col-md-10 offset-md-1 col-xl-8 offset-xl-2',
+          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12 fullscreen'
         ]
       %}
       <div{{ structure_attribute.addClass(structure_classes) }}>
@@ -186,10 +186,10 @@
 				{% set body_attribute = create_attribute() %}
 				{%
 					set main_structure_classes =[
-						page.sidebar_first and page.sidebar_second ? 'col-sm-4 col-md-6 col-md-push-3 col-sm-push-4',
-						page.sidebar_first and page.sidebar_second is empty ? 'col-sm-8 col-md-9 col-md-push-3 col-sm-push-4',
-						page.sidebar_second and page.sidebar_first is empty ? 'col-sm-8 col-md-9 col-md-push-3 col-sm-push-4',
-						page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12 fullscreen'
+						page.sidebar_first and page.sidebar_second ? 'col-md-4 col-lg-6 order-md-3 order-lg-3',
+						page.sidebar_first and page.sidebar_second is empty ? 'col-md-8 col-lg-9 order-md-3 order-lg-3',
+						page.sidebar_second and page.sidebar_first is empty ? 'col-md-8 col-lg-9 order-md-3 order-lg-3',
+						page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12 fullscreen'
 					]
 
 				%}
@@ -220,8 +220,8 @@
 			{% set aside_attribute = create_attribute() %}
 			{%
 				set aside_classes =[
-					page.sidebar_second is empty ? 'col-sm-4 col-md-3 col-md-pull-9 col-sm-pull-8',
-					page.sidebar_second ? 'col-sm-4 col-md-3 col-md-pull-9 col-sm-pull-8'
+					page.sidebar_second is empty ? 'col-md-4 col-lg-3 order-md-1 order-lg-1',
+					page.sidebar_second ? 'col-md-4 col-lg-3 order-md-1 order-lg-1'
 				]
 			%}
 				<aside {{ aside_attribute.addClass(aside_classes) }} role="complementary">
@@ -233,7 +233,7 @@
 		{# Sidebar Second #}
 		{% if page.sidebar_second %}
 			{% block sidebar_second %}
-				<aside class="col-sm-4 col-md-3 hidden-xs hidden-sm" role="complementary">
+				<aside class="col-md-4 col-lg-3 d-none d-sm-none order-md-5 order-lg-5" role="complementary">
 					{{ page.sidebar_second }}
 				</aside>
 			{% endblock %}
@@ -255,7 +255,7 @@
 	<div class="row">
 		{% if page.postscript_fir %}
 		  {% block postscript_fir %}
-		    <aside class="col-sm-4 col-md-3" role="complementary">
+		    <aside class="col-md-4 col-lg-3 order-md-1 order-lg-1" role="complementary">
 		      {{ page.postscript_fir }}
 		    </aside>
 		  {% endblock %}
@@ -264,10 +264,10 @@
     {% set postscript_attribute = create_attribute() %}
 		{%
 		    set postscript_classes = [
-		    	page.postscript_fir and page.postscript_last ? 'col-sm-4 col-md-6',
-		    	page.postscript_fir and page.postscript_mid is empty ? 'col-sm-8 col-md-9',
-		    	page.postscript_mid and page.postscript_fir is empty ? 'col-sm-8 col-md-9',
-		    	page.postscript_fir is empty and page.postscript_mid is empty ? 'col-sm-12'
+		    	page.postscript_fir and page.postscript_last ? 'col-md-4 col-lg-6 order-md-3 order-lg-3',
+		    	page.postscript_fir and page.postscript_mid is empty ? 'col-md-8 col-lg-9 order-md-3 order-lg-3',
+		    	page.postscript_mid and page.postscript_fir is empty ? 'col-md-8 col-lg-9 order-md-3 order-lg-3',
+		    	page.postscript_fir is empty and page.postscript_mid is empty ? 'col-md-12 order-md-3 order-lg-3'
 		    ]
 		%}
 
@@ -275,7 +275,7 @@
 
   	{% if page.postscript_mid %}
     	{% block postscript_mid %}
-      	<div class="col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+      	<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
         	{{ page.postscript_mid }}
       	</div>
     	{% endblock %}
@@ -285,7 +285,7 @@
 
 		{% if page.postscript_last %}
 		  {% block postscript_last %}
-		    <aside class="col-sm4 col-md-3" role="complementary">
+		    <aside class="col-md-4 col-lg-3 order-md-5 order-lg-5" role="complementary">
 		      {{ page.postscript_last }}
 		    </aside>
 		  {% endblock %}
