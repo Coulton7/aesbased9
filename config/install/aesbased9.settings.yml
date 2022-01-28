@@ -1,19 +1,45 @@
-# Default settings should not be located here. This file is only used to
-# install initial setting values. If your theme is the one that introduces a
-# new theme setting, it should use the Drupal Bootstrap base theme's
-# @BootstrapSetting annotation discovery process. This ensures that sub-theme
-# settings are inherited from base themes themes properly and to determine when
-# a setting should be saved to config as "overridden".
-#
-# @see \Drupal\bootstrap\Plugin\SettingBase
-# @see \Drupal\bootstrap\Plugin\SettingInterface
-# @see \Drupal\bootstrap\Plugin\SettingManager
-# @see \Drupal\bootstrap\Plugin\Form\SystemThemeSettings
-# @see \Drupal\bootstrap\ThemeSettings
+# Library.
+# ----------------------------
+bootstrap_barrio_library: 'production'
+# Layout.
+# ----------------------------
+bootstrap_barrio_sidebar_position: 'both'
+bootstrap_barrio_content_offset: 0
+bootstrap_barrio_sidebar_first_width: 4
+bootstrap_barrio_sidebar_first_offset: 0
+bootstrap_barrio_sidebar_second_width: 3
+bootstrap_barrio_sidebar_second_offset: 0
 
-# This file cannot be empty, so install an initial empty array for "schemas".
-# @see https://www.drupal.org/node/2813829
-schemas: []
+# Container.
+# ----------------------------
+bootstrap_barrio_fluid_container: 0
 
-# Disable the CDN provider so compiled source files can be used.
-#cdn_provider: ''
+# Buttons.
+# ----------------------------
+bootstrap_barrio_button: 1
+bootstrap_barrio_button_size: ''
+bootstrap_barrio_button_outline: 0
+
+# Navbar.
+# ----------------------------
+bootstrap_barrio_navbar_toggle: 'navbar-toggleable-lg'
+bootstrap_barrio_navbar_container: ''
+bootstrap_barrio_navbar_top_position: ''
+bootstrap_barrio_navbar_top_color: ''
+bootstrap_barrio_navbar_top_background: ''
+bootstrap_barrio_navbar_position: ''
+bootstrap_barrio_navbar_color: ''
+bootstrap_barrio_navbar_background: ''
+
+# Messages.
+# ----------------------------
+bootstrap_barrio_messages_widget: 'alerts'
+
+# Colors.
+# ----------------------------
+bootstrap_barrio_system_messages: 'messages_white'
+
+# Tables.
+# ----------------------------
+bootstrap_barrio_table_hover: 1
+bootstrap_barrio_table_style: 'table-striped'

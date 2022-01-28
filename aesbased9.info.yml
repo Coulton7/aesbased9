@@ -1,12 +1,9 @@
+name: aesbased9
 type: theme
-base theme: bootstrap
-core: 9.x
+description: 'The AES Base Theme'
+core: 8.x
 core_version_requirement: ^8 || ^9
-version: 1.0
-
-name: 'aesbased9'
-description: 'A Drupal Bootstrap 3 based sub-theme.'
-package: 'Bootstrap'
+base theme: bootstrap_barrio
 
 regions:
   navigation: 'Navigation'
@@ -28,3 +25,8 @@ regions:
   footer_lower: 'Footer Lower'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
+
+# Information added by Drupal.org packaging script on 2021-10-11
+version: '5.5.4'
+project: 'bootstrap_barrio'
+datestamp: 1633918196
