@@ -179,7 +179,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12 fullscreen'
         ]
       %}
-      <div{{ structure_attribute.addClass(structure_classes) }}>
+      <div {{ structure_attribute.addClass(structure_classes) }}>
 
         {# Content #}
         {% block content %}
@@ -212,8 +212,9 @@
 
           {{ page.content }}
         {% endblock %}
-			</section>
-    </div>
+				</section>
+    	</div>
+		</div>
 		{# Sidebar First #}
 		{% if page.sidebar_first %}
 			{% block sidebar_first %}
