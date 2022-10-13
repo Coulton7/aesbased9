@@ -179,7 +179,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12 fullscreen'
         ]
       %}
-      <div{{ structure_attribute.addClass(structure_classes) }}>
+      <div {{ structure_attribute.addClass(structure_classes) }}>
 
         {# Content #}
         {% block content %}
@@ -195,25 +195,25 @@
 				%}
 				<div class="tablet-fix">
           <section id="main-content" {{ body_attribute.addClass(main_structure_classes) }}>
+						{# Highlighted #}
+						{% if page.highlighted %}
+							{% block highlighted %}
+								<div class="highlighted">{{ page.highlighted }}</div>
+							{% endblock %}
+						{% endif %}
 
-					{# Highlighted #}
-					{% if page.highlighted %}
-						{% block highlighted %}
-							<div class="highlighted">{{ page.highlighted }}</div>
-						{% endblock %}
-					{% endif %}
+						{# Help #}
+						{% if page.help %}
+							{% block help %}
+								{{ page.help }}
+							{% endblock %}
+						{% endif %}
 
-					{# Help #}
-					{% if page.help %}
-						{% block help %}
-							{{ page.help }}
-						{% endblock %}
-					{% endif %}
-
-          {{ page.content }}
-        {% endblock %}
-			</section>
-    </div>
+          	{{ page.content }}
+        	{% endblock %}
+				</section>
+    	</div>
+		</div>
 		{# Sidebar First #}
 		{% if page.sidebar_first %}
 			{% block sidebar_first %}
